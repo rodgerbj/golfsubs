@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+
+	<fields name="filter">
+
+		<field
+			name="search"
+			type="text"
+			inputmode="search"
+			label="COM_GOLFSUBS_FILTER_SEARCH_LABEL"
+			description="COM_GOLFSUBS_FILTER_SEARCH_DESC"
+			hint="JSEARCH_FILTER"
+		/>
+
+		<field
+			name="featured"
+			type="list"
+			onchange="this.form.submit();"
+			default=""
+			>
+			<option value="">JOPTION_SELECT_FEATURED</option>
+			<option value="0">JUNFEATURED</option>
+			<option value="1">JFEATURED</option>
+		</field>
+
+		<field
+			name="published"
+			type="status"
+			label="JOPTION_SELECT_PUBLISHED"
+			onchange="this.form.submit();"
+			>
+			<option value="">JOPTION_SELECT_PUBLISHED</option>
+		</field>
+
+		<field
+			name="category_id"
+			type="category"
+			label="JCATEGORY"
+			multiple="true"
+			extension="com_golfsubs"
+			layout="joomla.form.field.list-fancy-select"
+			hint="JOPTION_SELECT_CATEGORY"
+			onchange="this.form.submit();"
+			published="0,1,2"
+		/>
+
+		<field
+			name="access"
+			type="accesslevel"
+			label="JOPTION_SELECT_ACCESS"
+			onchange="this.form.submit();"
+			>
+			<option value="">JOPTION_SELECT_ACCESS</option>
+		</field>
+
+	</fields>
+	<field
+			name="tag"
+			type="tag"
+			label="JTAG"
+			multiple="true"
+			mode="nested"
+			custom="false"
+			hint="JOPTION_SELECT_TAG"
+			onchange="this.form.submit();"
+		/>
+
+	<fields name="list">
+
+		<field
+			name="fullordering"
+			type="list"
+			label="JGLOBAL_SORT_BY"
+			default="a.memname ASC"
+			onchange="this.form.submit();"
+			>
+			<option value="">JGLOBAL_SORT_BY</option>
+			<option value="a.ordering ASC">JGRID_HEADING_ORDERING_ASC</option>
+			<option value="a.ordering DESC">JGRID_HEADING_ORDERING_DESC</option>
+			<option value="a.published ASC">JSTATUS_ASC</option>
+			<option value="a.published DESC">JSTATUS_DESC</option>
+			<option value="a.memname ASC">JGLOBAL_TITLE_ASC</option>
+			<option value="a.memname DESC">JGLOBAL_TITLE_DESC</option>
+			<option value="a.mememail ASC">JGLOBAL_TITLE_ASC</option>
+			<option value="a.mememail DESC">JGLOBAL_TITLE_DESC</option>
+			
+			<option value="category_title ASC">JCATEGORY_ASC</option>
+			<option value="category_title DESC">JCATEGORY_DESC</option>
+			<option value="access_level ASC">JGRID_HEADING_ACCESS_ASC</option>
+			<option value="access_level DESC">JGRID_HEADING_ACCESS_DESC</option>
+		
+			<option value="a.id ASC">JGRID_HEADING_ID_ASC</option>
+			<option value="a.id DESC">JGRID_HEADING_ID_DESC</option>
+		</field>
+
+		<field
+			name="limit"
+			type="limitbox"
+			label="JGLOBAL_LIST_LIMIT"
+			default="25"
+			onchange="this.form.submit();"
+		/>
+	</fields>
+</form>

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "com_golfsubs",
+  "version": "1.0.0",
+  "description": "Joomla CMS",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "com_golfsubs.admin-members-letter",
+      "type": "script",
+      "uri": "com_golfsubs/admin-members-letter.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "defer": true
+      }
+    },
+    {
+      "name": "com_golfsubs.admin-members-name",
+      "type": "script",
+      "uri": "com_golfsubs/admin-members-name.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "defer": true
+      }
+    },
+    {
+      "name": "com_golfsubs.admin-members-email",
+      "type": "script",
+      "uri": "com_golfsubs/admin-members-email.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "defer": true
+      }
+    },
+    {
+      "name": "com_golfsubs.admin-members-modal",
+      "type": "script",
+      "uri": "com_golfsubs/admin-members-modal.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "defer": true
+      }
+    }
+  ]
+}

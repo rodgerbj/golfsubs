@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_GOLFSUBS_MEMBER_VIEW_DEFAULT_TITLE">
+		<message>
+			<![CDATA[COM_GOLFSUBS_MEMBER_VIEW_DEFAULT_DESC]]>
+		</message>
+	</layout>
+	<!-- Add fields to the request variables for the layout. -->
+	<fields name="request">
+		<fieldset name="request"
+			addfieldprefix="GolfsubsNamespace\Component\Golfsubs\Administrator\Field"
+		>
+			<field
+				name="id"
+				type="modal_member"
+				label="COM_GOLFSUBS_SELECT_MEMBER_LABEL"
+				required="true"
+				select="true"
+				new="true"
+				edit="true"
+				clear="true"
+			/>
+		</fieldset>
+	</fields>
+	<!-- Add fields to the parameters object for the layout. -->
+	<fields name="params">
+		<fieldset name="basic" label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS">
+			<field
+				name="show_memname"
+				type="radio"
+				label="COM_GOLFSUBS_FIELD_PARAMS_MEMNAME_LABEL"
+				layout="joomla.form.field.radio.switcher"
+				default="1"
+				class=""
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+		</fieldset>
+	</fields>
+</metadata>

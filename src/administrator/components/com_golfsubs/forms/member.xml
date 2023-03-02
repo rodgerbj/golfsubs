@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<config>
+		<inlinehelp button="show"/>
+	</config>
+	<fieldset 
+		addruleprefix="GolfsubsNamespace\Component\Golfsubs\Administrator\Rule"
+		addfieldprefix="GolfsubsNamespace\Component\Golfsubs\Administrator\Field"
+	>
+		<field
+			name="id"
+			type="number"
+			label="JGLOBAL_FIELD_ID_LABEL"
+			default="0"
+			class="readonly"
+			readonly="true"
+		/>
+		<field
+			name="memname"
+			type="text"
+			validate="Name"
+		
+			label="COM_GOLFSUBS_FIELD_MEMNAME_LABEL"
+			description="COM_GOLFSUBS_FIELD_MEMNAME_DESC"
+			size="40"
+			required="true"
+		 />
+		 <field
+			name="mememail"
+			type="email"
+			label="JGLOBAL_EMAIL"
+			required="true"
+			validate="Email"
+		/>
+		 <field
+			name="memphone"
+			type="text"
+			
+			label="JGLOBAL_PHONE"
+			description="COM_GOLFSUBS_FIELD_MEMNAME_DESC"
+			size="40"
+			required="true"
+		 />
+		
+		
+		<field
+			name="access"
+			type="accesslevel"
+			label="JFIELD_ACCESS_LABEL"
+			size="1"
+		/>
+		<field
+			name="alias"
+			type="text"
+			label="JFIELD_ALIAS_LABEL"
+			size="45"
+			hint="JFIELD_ALIAS_PLACEHOLDER"
+		/>
+
+		
+		<field
+			name="catid"
+			type="categoryedit"
+			label="JCATEGORY"
+			extension="com_golfsubs"
+			addfieldprefix="Joomla\Component\Categories\Administrator\Field"
+			required="true"
+			default=""
+		/>
+		
+		<field
+			name="featured"
+			type="radio"
+			layout="joomla.form.field.radio.switcher"
+			label="JFEATURED"
+			default="0"
+			>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+
+		<field
+			name="published"
+			type="list"
+			label="JSTATUS"
+			default="1"
+			id="published"
+			class="custom-select-color-state"
+			size="1"
+			>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field>
+
+		<field
+			name="publish_up"
+			type="calendar"
+			label="COM_GOLFSUBS_FIELD_PUBLISH_UP_LABEL"
+			translateformat="true"
+			showtime="true"
+			size="22"
+			filter="user_utc"
+		/>
+
+		<field
+			name="publish_down"
+			type="calendar"
+			label="COM_GOLFSUBS_FIELD_PUBLISH_DOWN_LABEL"
+			translateformat="true"
+			showtime="true"
+			size="22"
+			filter="user_utc"
+		/>
+		<field
+			name="checked_out"
+			type="hidden"
+			filter="unset"
+		/>
+
+		<field
+			name="checked_out_time"
+			type="hidden"
+			filter="unset"
+		/>
+
+		<field
+			name="ordering"
+			type="ordering"
+			label="JFIELD_ORDERING_LABEL"
+			content_type="com_golfsubs.member"
+		/>
+	</fieldset>
+
+	<fields name="params" label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS">
+		<fieldset name="display" label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS">
+			<field
+				name="show_memname"
+				type="list"
+				label="COM_GOLFSUBS_FIELD_PARAMS_MEMNAME_LABEL"
+				useglobal="true"
+			>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			
+			<field
+				name="member_layout"
+				type="componentlayout"
+				label="JFIELD_ALT_LAYOUT_LABEL"
+				class="custom-select"
+				extension="com_golfsubs"
+				view="member"
+				useglobal="true"
+			/>
+		</fieldset>
+	</fields>
+</form>
