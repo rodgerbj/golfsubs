@@ -11,6 +11,7 @@ namespace GolfsubsNamespace\Component\Golfsubs\Administrator\Table;
 
 \defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
 use Joomla\CMS\Application\ApplicationHelper;
 use Joomla\CMS\Table\Table;
 use Joomla\Database\DatabaseDriver;
@@ -92,6 +93,31 @@ class MemberTable extends Table
 			$this->publish_down = null;
 		}
 
+		// Check the phone is formatted as (xxx)yyy-zzzz
+		// Convert all digits to desired format
+		// 			$cleanvalue = preg_replace('/[+. \-(\)]/', '', $value);
+		// 			$regex = '/^[0-9]{7,15}?$/';
+		// if (preg_match($regex, $cleanvalue) == true)
+		$vartext = $this->memphone;
+		$cleanvalue = preg_replace('/[+. \-(\)]/', '', $vartext);
+		$regex = '/^[0-9]{7,10}?$/';
+
+		if (preg_match($regex, $cleanvalue) == true) {
+			$sp = str_split($cleanvalue);
+			
+			if (strlen($cleanvalue) == 7) {
+				$BRmessage = "Default Area Code Added to number";
+				$areacode = "(814) ";
+				Factory::getApplication()->enqueueMessage($BRmessage, 'message');
+				$phoneformat = $sp[0] .$sp[1] . $sp[2] . "-" . $sp[3] . $sp[4] . $sp[5] . $sp[6];
+			} else {
+				$areacode = "(" . $sp[0] .$sp[1] . $sp[2] . ") ";
+				$phoneformat = $sp[3] .$sp[4] . $sp[5] . "-" . $sp[6] . $sp[7] . $sp[8] . $sp[9];
+			}
+			$this->memphone = $areacode . $phoneformat;
+		}
+
+	
 		return true;
 	}
 

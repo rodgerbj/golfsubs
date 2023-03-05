@@ -8,7 +8,7 @@
 	<copyright>[COPYRIGHT]</copyright>
 	<license>GNU General Public License version 2 or later;</license>
 
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<!-- Adding Parameters -->
 	
 	<description>COM_GOLFSUBS_XML_DESCRIPTION</description>
@@ -41,6 +41,11 @@
 		<filename>joomla.asset.json</filename>
 		<folder>js</folder>
     </media>
+	<plugins folder="plugins/content/contentphoneformat">
+		<filename>contentphoneformat.php</filename>
+		<filename>contentphoneformat.xml</filename>
+		<folder>language</folder>
+	</plugins>
 	<!-- Back-end files -->
 	<administration>
 		<menu img="class:comment">

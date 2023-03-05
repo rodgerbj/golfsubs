@@ -21,7 +21,9 @@ if ($tparams->get('show_memname')) {
 		echo Text::_('COM_GOLFSUBS_MEMNAME');
 		}
 	echo $this->item->memname;
+	?><br><?php
 	echo $this->item->mememail;
+	?><br><?php
 	echo $this->item->memphone;
 }
 ?>
@@ -36,7 +38,7 @@ if ($tparams->get('show_memname')) {
 	</div>
 <?php endif; ?>
 
-<?php
+<!-- hp
 echo $this->item->event->afterDisplayTitle;
 echo $this->item->event->beforeDisplayContent;
-echo $this->item->event->afterDisplayContent;
+echo $this->item->event->afterDisplayContent; -->

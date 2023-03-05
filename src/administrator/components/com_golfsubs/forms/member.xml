@@ -34,12 +34,12 @@
 		/>
 		 <field
 			name="memphone"
-			type="text"
-			
+			type="tel"
+			validate="Tel"	
 			label="JGLOBAL_PHONE"
 			description="COM_GOLFSUBS_FIELD_MEMNAME_DESC"
 			size="40"
-			required="true"
+	
 		 />
 		
 		
