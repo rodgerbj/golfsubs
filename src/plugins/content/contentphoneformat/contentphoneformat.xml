@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="content" method="upgrade">
+	<name>plg_content_contentphoneformat</name>
+	<author>Kevins Guides</author>
+	<creationDate>Nov 2022</creationDate>
+	<copyright>Copyright (C) 2022 Kevin Olson - Kevin's Guides</copyright>
+	<license>MIT</license>
+	<authorEmail>youremail@yoursite.com</authorEmail>
+	<authorUrl>www.kevinsguides.com</authorUrl>
+	<version>0.01</version>
+	<description>PLG_CONTENT_CONTENTPHONEFORMAT_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="contentphoneformat">contentphoneformat.php</filename>
+		<folder>language</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_content_contentphoneformat.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_content_contentphoneformat.ini</language>
+	</languages>
+</extension>
