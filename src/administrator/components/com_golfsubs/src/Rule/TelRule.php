@@ -96,7 +96,7 @@ class TelRule extends FormRule
 			 * are allowed).
 			 */
 			$cleanvalue = preg_replace('/[+. \-(\)]/', '', $value);
-			$regex = '/^[0-9]{7,15}?$/';
+			$regex = '/^[0-9]{10}?$/';
 
 			if (preg_match($regex, $cleanvalue) == true)
 			{

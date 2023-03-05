@@ -93,31 +93,22 @@ class MemberTable extends Table
 			$this->publish_down = null;
 		}
 
-		// Check the phone is formatted as (xxx)yyy-zzzz
+
 		// Convert all digits to desired format
 		// 			$cleanvalue = preg_replace('/[+. \-(\)]/', '', $value);
 		// 			$regex = '/^[0-9]{7,15}?$/';
 		// if (preg_match($regex, $cleanvalue) == true)
-		$vartext = $this->memphone;
-		$cleanvalue = preg_replace('/[+. \-(\)]/', '', $vartext);
-		$regex = '/^[0-9]{7,10}?$/';
+		if (isset($this->memphone)) {
+			if ($this->memphone !== '') {
+				$vartext = $this->memphone;
+				$cleanvalue = preg_replace('/[+. \-(\)]/', '', $vartext);
 
-		if (preg_match($regex, $cleanvalue) == true) {
-			$sp = str_split($cleanvalue);
-			
-			if (strlen($cleanvalue) == 7) {
-				$BRmessage = "Default Area Code Added to number";
-				$areacode = "(814) ";
-				Factory::getApplication()->enqueueMessage($BRmessage, 'message');
-				$phoneformat = $sp[0] .$sp[1] . $sp[2] . "-" . $sp[3] . $sp[4] . $sp[5] . $sp[6];
-			} else {
+				$sp = str_split($cleanvalue);
 				$areacode = "(" . $sp[0] .$sp[1] . $sp[2] . ") ";
 				$phoneformat = $sp[3] .$sp[4] . $sp[5] . "-" . $sp[6] . $sp[7] . $sp[8] . $sp[9];
+				$this->memphone = $areacode . $phoneformat;
 			}
-			$this->memphone = $areacode . $phoneformat;
 		}
-
-	
 		return true;
 	}
 

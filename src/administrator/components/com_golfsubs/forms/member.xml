@@ -36,9 +36,10 @@
 			name="memphone"
 			type="tel"
 			validate="Tel"	
-			label="JGLOBAL_PHONE"
+			label="COM_GOLFSUBS_FIELD_PHONE"
 			description="COM_GOLFSUBS_FIELD_MEMNAME_DESC"
 			size="40"
+			message="Please enter 10 digit phone number with area code."
 	
 		 />
 		
