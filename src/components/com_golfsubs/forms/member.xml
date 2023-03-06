@@ -31,13 +31,14 @@
 			size="40"
 			required="true"
 		 />
-		 		<field
+		<field
 			name="memphone"
 			type="tel"
 			validate="Tel"
-			label="COM_GOLFSUBS_FIELD_MEMPHONE_LABEL"
+			label="COM_GOLFSUBS_FIELD_PHONE"
 			size="40"
-			required="true"
+			message="Please enter 10 digit phone number with area code."
+	
 		 />
 		<field
 			name="alias"
