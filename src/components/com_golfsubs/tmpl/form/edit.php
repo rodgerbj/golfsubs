@@ -34,6 +34,7 @@ $this->useCoreUI = true;
 		<?php echo $this->form->renderField('memname'); ?>
 		<?php echo $this->form->renderField('mememail'); ?>
 		<?php echo $this->form->renderField('memphone'); ?>
+		<?php echo $this->form->renderField('catid'); ?>
 
 		<?php if (is_null($this->item->id)) : ?>
 			<?php echo $this->form->renderField('alias'); ?>
